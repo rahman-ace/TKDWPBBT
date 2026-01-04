@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(bb.webp); /* Overlay agar teks lebih terbaca */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Background tetap diam saat scroll */
+    min-height: 100vh;
+}
+
+/* Navigasi Perbaikan */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    background-color: #1a5f7a;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px; /* Gunakan tinggi pasti (px) bukan vh agar stabil */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Kontainer Kontak Perbaikan */
+.contact-container {
+    max-width: 900px;
+    width: 90%; /* Memberi jarak aman di kanan kiri HP */
+    margin: 100px auto 50px; /* Jarak atas 100px agar tidak tertutup navbar */
+    background: rgba(255, 255, 255, 0.95); /* Sedikit transparan agar modern */
+    color: black;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1a5f7a;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 280px; /* Menyesuaikan lebar HP kecil */
+}
+
+.contact-info h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffd700;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px; /* Mencegah auto-zoom pada iPhone saat input diklik */
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    background-color: #1a5f7a;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #ffd700;
+    color: #1a5f7a;
+}
+
+/* --- RESPONSIVE UNTUK HP --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 5%;
+    }
+    
+    .logo {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+    }
+
+    nav ul li a {
+        font-size: 0.85rem;
+    }
+
+    .contact-container {
+        margin-top: 140px; /* Jarak lebih besar karena navbar di HP jadi 2 baris */
+        padding: 20px;
+    }
+
+    .contact-content {
+        flex-direction: column; /* Info di atas, form di bawah */
+    }
+
+    .contact-info {
+        text-align: center;
+        min-width: 100%;
+    }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto Responsif - TK DARMA WANITA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Navigasi yang lebih fleksibel */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            background-color: #1a5f7a;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 70px; /* Tinggi tetap agar rapi */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            max-width: 50%;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 30px 0;
+            color: #1a5f7a;
+        }
+
+        /* Container utama agar konten tidak mepet ke pinggir layar */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Grid Galeri yang otomatis menyesuaikan jumlah kolom */
+        .gallery {
+            display: grid;
+            /* Di desktop 4 kolom, di HP otomatis jadi 1-2 kolom */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            padding-bottom: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px; /* Tinggi seragam agar rapi */
+            object-fit: cover; /* Gambar terpotong rapi tanpa gepeng */
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #1a5f7a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Perbaikan khusus Tampilan HP (Layar di bawah 768px) */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            .logo {
+                max-width: 90%;
+                text-align: center;
+                margin-bottom: 10px;
+                font-size: 1rem;
+            }
+
+            nav ul {
+                width: 100%;
+                justify-content: center;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 0 8px;
+            }
+
+            nav ul li a {
+                font-size: 0.85rem;
+            }
+
+            .gallery {
+                /* Di HP kecil, buat 1 kolom saja agar gambar besar dan jelas */
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+                gap: 20px;
+            }
+
+            .gallery img {
+                height: 250px; /* Di HP gambar dibuat sedikit lebih tinggi */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">TK DARMA WANITA PERSATUAN</div>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="guru.html">Guru Mengajar</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Galeri Foto Kegiatan</h2>
+
+        <div class="gallery">
+            <img src="1.webp" alt="Foto 1">
+            <img src="2.webp" alt="Foto 2">
+            <img src="3.webp" alt="Foto 3">
+            <img src="4.webp" alt="Foto 4">
+            <img src="1.webp" alt="Foto 5">
+            <img src="2.webp" alt="Foto 6">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TK DARMA WANITA PERSATUAN. Semua Hak Dilindungi.</p>
+    </footer>
+
+</body>
+</html

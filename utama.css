@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+/* --- Navigasi --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background-color: #1a5f7a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 70px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+/* --- Hero Section --- */
+.hero {
+    height: 80vh; /* Sedikit lebih tinggi di HP agar proporsional */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('bg.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 25px;
+}
+
+.hero h1 {
+    font-size: 2.8rem; /* Desktop size */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 14px 35px;
+    background-color: #ff8c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+/* --- Fitur/Info --- */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 60px 5%;
+    background-color: #ffffff;
+}
+
+.card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-bottom: 5px solid #1a5f7a;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+/* --- Footer --- */
+footer {
+    background-color: #1a5f7a;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* --- PERBAIKAN KHUSUS HP (Mobile) --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px 10px;
+        height: auto; /* Agar menu tidak terpotong */
+    }
+    
+    .logo {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+        width: 100%;
+        gap: 5px;
+    }
+
+    nav ul li {
+        margin: 0 8px;
+    }
+
+    nav ul li a {
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        height: 60vh; /* Pendekkan sedikit di HP agar tombol terlihat tanpa scroll jauh */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Font mengecil agar tidak berantakan */
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .features {
+        padding: 40px 15px;
+        gap: 15px;
+    }
+    
+    .card {
+        padding: 25px 15px;
+    }
+}
